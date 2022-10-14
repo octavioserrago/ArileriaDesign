@@ -1,19 +1,124 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Lato");
 
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
+
 body{
-  font-family: "inter", sans-serif;
+  font-family: "Fire sans", sans-serif;
 }
 
-:root{
-  --highlight: #5756e6;
+.container{
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
+nav{
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 99;
+  background-color: #faebd4;
+  padding: 16px 32px;
+  border-bottom: 3px solid #5d7f54;
+}
 
+h1{
+  color: #5d7f54;
+  font-size: 28px;
+  font-weight: 900;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.hamburger{
+display: block;
+position: relative;
+z-index: 1;
+
+user-select: none;
+
+appearance: none;
+border: none;
+outline: none;
+background: none;
+cursor: pointer;
+
+}
+
+.hamburger span{
+  display: block;
+  width: 33px;
+  height: 4px;
+  margin-bottom: 5px;
+  position: relative;
+
+  background-color: black;
+  border-radius: 6px;
+  z-index: 1;
+  transform-origin: 0.0;
+  transition: 0.4s;
+}
+
+.hamburger:hover span:nth-child(2){
+  transform: translateX(10px);
+  background-color: #5d7f54;
+}
+
+.hamburger.is-active span:nth-child(1){
+  transform: translate(3px, -2px) rotate(45deg);
+}
+
+.hamburger.is-active span:nth-child(2){
+  opacity: 0;
+  transform: translateX(15px);
+}
+
+.hamburger.is-active span:nth-child(3){
+  transform: translate(3px, 3px) rotate(-45deg);
+}
+
+.hamburger.is-active:hover span{
+  background-color: #5d7f54;
+}
+
+.menu{
+  display: none;
+  flex: 1 1 0%;
+  justify-content: flex-end;
+  margin: 0 -16px;
+}
+
+.menu a{
+  color: #5d7f54;
+  margin: 0 16px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.4s;
+  padding: 8px 16px;
+  border-radius: 99px;
+}
+
+.menu a.is-active, .menu a:hover{
+  background-color: white;
+}
+
+@media (min-width: 700px) {
+  .hamburger {
+    display: none;
+  }
+
+  .menu {
+    display: flex;
+  }
+}
 
 .elsubnav{
   height: 600px;
@@ -35,7 +140,7 @@ body{
 
 .patron{
  height: 900px;
- background-color: slateblue;
+ background-color: #faebd4;
 }
 
 
@@ -45,7 +150,7 @@ body{
     display: flex;
     height: 200px;
     justify-content: center;
-    background-color: blue;
+    background-color: beige;
   }
   
   @-webkit-keyframes scroll {
@@ -106,3 +211,4 @@ body{
     width: 100%;
     text-align: center;
   }
+
